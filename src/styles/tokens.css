@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --font-display: 'Fraunces', 'Times New Roman', serif;
+  --font-body: 'Work Sans', 'Segoe UI', sans-serif;
+
+  --color-ink: #1a1c20;
+  --color-muted: #6b7280;
+  --color-border: #e4e7ec;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7f6f2;
+  --color-canvas: #f5f2ea;
+  --color-accent: #f4c400;
+  --color-accent-ink: #1c1604;
+  --color-danger: #b42318;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+
+  --shadow-soft: 0 20px 45px -40px rgba(15, 23, 42, 0.45);
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 20px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+}
