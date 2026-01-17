@@ -3,10 +3,11 @@ import { PageHeader } from '../../../components/PageHeader'
 import { DataTable, type Column } from '../../../components/Table'
 import { getCopy } from '../../../lib/i18n'
 import { type Cuenta } from '../../../types/domain'
+import { useCuentas } from '../hooks/useCuentas'
 
 export function CuentasPage() {
   const [query, setQuery] = useState('')
-  const data: Cuenta[] = []
+  const { data, isLoading, error } = useCuentas()
   const copy = getCopy()
 
   const columns: Array<Column<Cuenta>> = [
@@ -59,11 +60,14 @@ export function CuentasPage() {
         actionLabel={copy.actionNew}
         onAction={() => {}}
       />
+      {error ? <div className="alert">{error}</div> : null}
       <DataTable
         columns={columns}
         data={filtered}
         getRowKey={(row) => String(row.numeroCuenta)}
-        emptyMessage={copy.noAccounts}
+        emptyMessage={
+          isLoading ? copy.loadingAccounts : error ? copy.errorAccounts : copy.noAccounts
+        }
       />
     </section>
   )

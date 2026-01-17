@@ -1,8 +1,8 @@
-import { apiRequest } from '../../../lib/apiClient'
+import { apiRequest, requestWithFallback } from '../../../lib/apiClient'
 import { type Cliente } from '../../../types/domain'
 
 export function fetchClientes() {
-  return apiRequest<Cliente[]>('/clientes')
+  return requestWithFallback<Cliente[]>('/clientes', {}, 'clientes.json')
 }
 
 export function createCliente(payload: Omit<Cliente, 'clienteId'>) {

@@ -1,15 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../../components/Button'
 import { Input } from '../../../components/Input'
 import { DataTable, type Column } from '../../../components/Table'
 import { getCopy } from '../../../lib/i18n'
 import { type ReporteMovimiento } from '../../../types/domain'
+import { useReportes } from '../hooks/useReportes'
 
 export function ReportesPage() {
   const [clientId, setClientId] = useState('')
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
-  const data: ReporteMovimiento[] = []
+  const { data, pdfBase64, isLoading, error, loadReportes } = useReportes()
   const copy = getCopy()
 
   const columns: Array<Column<ReporteMovimiento>> = [
@@ -43,6 +44,32 @@ export function ReportesPage() {
     },
   ]
 
+  useEffect(() => {
+    void loadReportes()
+  }, [loadReportes])
+
+  const handleGenerate = () => {
+    void loadReportes({
+      clienteId: clientId || undefined,
+      fechaInicio: startDate || undefined,
+      fechaFin: endDate || undefined,
+    })
+  }
+
+  const handleDownload = () => {
+    if (!pdfBase64) {
+      return
+    }
+
+    const dataUrl = pdfBase64.startsWith('data:application/pdf;base64,')
+      ? pdfBase64
+      : `data:application/pdf;base64,${pdfBase64}`
+    const anchor = document.createElement('a')
+    anchor.href = dataUrl
+    anchor.download = 'report.pdf'
+    anchor.click()
+  }
+
   return (
     <section className="page">
       <header className="page-header page-header-stack">
@@ -53,10 +80,15 @@ export function ReportesPage() {
           </p>
         </div>
         <div className="report-actions">
-          <Button type="button" variant="primary">
+          <Button type="button" variant="primary" onClick={handleGenerate}>
             {copy.reportsGenerate}
           </Button>
-          <Button type="button" variant="ghost">
+          <Button
+            type="button"
+            variant="ghost"
+            onClick={handleDownload}
+            disabled={!pdfBase64}
+          >
             {copy.reportsDownload}
           </Button>
         </div>
@@ -89,11 +121,14 @@ export function ReportesPage() {
         </label>
       </form>
 
+      {error ? <div className="alert">{error}</div> : null}
       <DataTable
         columns={columns}
         data={data}
         getRowKey={(row) => `${row.numeroCuenta}-${row.fecha}`}
-        emptyMessage={copy.noReports}
+        emptyMessage={
+          isLoading ? copy.loadingReports : error ? copy.errorReports : copy.noReports
+        }
       />
     </section>
   )

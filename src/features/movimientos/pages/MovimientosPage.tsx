@@ -3,10 +3,11 @@ import { PageHeader } from '../../../components/PageHeader'
 import { DataTable, type Column } from '../../../components/Table'
 import { getCopy } from '../../../lib/i18n'
 import { type Movimiento } from '../../../types/domain'
+import { useMovimientos } from '../hooks/useMovimientos'
 
 export function MovimientosPage() {
   const [query, setQuery] = useState('')
-  const data: Movimiento[] = []
+  const { data, isLoading, error } = useMovimientos()
   const copy = getCopy()
 
   const columns: Array<Column<Movimiento>> = [
@@ -55,11 +56,14 @@ export function MovimientosPage() {
         actionLabel={copy.actionNew}
         onAction={() => {}}
       />
+      {error ? <div className="alert">{error}</div> : null}
       <DataTable
         columns={columns}
         data={filtered}
         getRowKey={(row) => String(row.movimientoId)}
-        emptyMessage={copy.noMovements}
+        emptyMessage={
+          isLoading ? copy.loadingMovements : error ? copy.errorMovements : copy.noMovements
+        }
       />
     </section>
   )

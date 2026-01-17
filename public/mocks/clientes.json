@@ -1,0 +1,35 @@
+[
+  {
+    "clienteId": 1,
+    "nombre": "Jose Lema",
+    "genero": "M",
+    "edad": 31,
+    "identificacion": "0102030405",
+    "direccion": "Otavalo sn y principal",
+    "telefono": "098254785",
+    "contrasena": "1234",
+    "estado": true
+  },
+  {
+    "clienteId": 2,
+    "nombre": "Mariane la Montalvo",
+    "genero": "F",
+    "edad": 28,
+    "identificacion": "1718137159",
+    "direccion": "Amazonas y NNUU",
+    "telefono": "097548965",
+    "contrasena": "5678",
+    "estado": true
+  },
+  {
+    "clienteId": 3,
+    "nombre": "Juan Osorio",
+    "genero": "M",
+    "edad": 33,
+    "identificacion": "0912345678",
+    "direccion": "13 junio y Equinoccial",
+    "telefono": "098874587",
+    "contrasena": "1245",
+    "estado": true
+  }
+]

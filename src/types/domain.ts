@@ -38,6 +38,11 @@ export type ReporteMovimiento = {
   saldoDisponible: number
 }
 
+export type ReportesResponse = {
+  data: ReporteMovimiento[]
+  pdfBase64?: string | null
+}
+
 export type ApiError = {
   message: string
 }

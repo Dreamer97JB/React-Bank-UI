@@ -20,6 +20,12 @@ export type Copy = {
   statusInactive: string
   loadingClients: string
   errorClients: string
+  loadingAccounts: string
+  errorAccounts: string
+  loadingMovements: string
+  errorMovements: string
+  loadingReports: string
+  errorReports: string
   noClients: string
   noAccounts: string
   noMovements: string
@@ -71,6 +77,12 @@ const translations: Record<Locale, Copy> = {
     statusInactive: 'Inactivo',
     loadingClients: 'Cargando clientes...',
     errorClients: 'No se pudieron cargar los clientes.',
+    loadingAccounts: 'Cargando cuentas...',
+    errorAccounts: 'No se pudieron cargar las cuentas.',
+    loadingMovements: 'Cargando movimientos...',
+    errorMovements: 'No se pudieron cargar los movimientos.',
+    loadingReports: 'Cargando reportes...',
+    errorReports: 'No se pudieron cargar los reportes.',
     noClients: 'No hay clientes disponibles.',
     noAccounts: 'No hay cuentas disponibles.',
     noMovements: 'No hay movimientos disponibles.',
@@ -120,6 +132,12 @@ const translations: Record<Locale, Copy> = {
     statusInactive: 'Inactive',
     loadingClients: 'Loading clients...',
     errorClients: 'Unable to load clients.',
+    loadingAccounts: 'Loading accounts...',
+    errorAccounts: 'Unable to load accounts.',
+    loadingMovements: 'Loading movements...',
+    errorMovements: 'Unable to load movements.',
+    loadingReports: 'Loading reports...',
+    errorReports: 'Unable to load reports.',
     noClients: 'No clients available.',
     noAccounts: 'No accounts available.',
     noMovements: 'No movements available.',

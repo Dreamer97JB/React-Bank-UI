@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "fecha": "2022-02-10",
+      "cliente": "Mariane la Montalvo",
+      "numeroCuenta": "225487",
+      "tipo": "Corriente",
+      "saldoInicial": 100,
+      "estado": true,
+      "movimiento": 600,
+      "saldoDisponible": 700
+    },
+    {
+      "fecha": "2022-02-08",
+      "cliente": "Mariane la Montalvo",
+      "numeroCuenta": "496825",
+      "tipo": "Ahorro",
+      "saldoInicial": 540,
+      "estado": true,
+      "movimiento": -540,
+      "saldoDisponible": 0
+    }
+  ],
+  "pdfBase64": ""
+}
