@@ -6,16 +6,26 @@ export type ModalProps = {
   closeLabel: string
   onClose: () => void
   children: ReactNode
+  dismissOnBackdrop?: boolean
+  dismissOnEscape?: boolean
 }
 
-export function Modal({ isOpen, title, closeLabel, onClose, children }: ModalProps) {
+export function Modal({
+  isOpen,
+  title,
+  closeLabel,
+  onClose,
+  children,
+  dismissOnBackdrop = false,
+  dismissOnEscape = false,
+}: ModalProps) {
   useEffect(() => {
     if (!isOpen) {
       return
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && dismissOnEscape) {
         onClose()
       }
     }
@@ -28,8 +38,14 @@ export function Modal({ isOpen, title, closeLabel, onClose, children }: ModalPro
     return null
   }
 
+  const handleBackdropClick = () => {
+    if (dismissOnBackdrop) {
+      onClose()
+    }
+  }
+
   return (
-    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+    <div className="modal-backdrop" role="presentation" onClick={handleBackdropClick}>
       <div
         className="modal"
         role="dialog"
