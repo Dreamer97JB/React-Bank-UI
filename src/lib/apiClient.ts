@@ -54,7 +54,7 @@ export async function requestJson<T>(path: string) {
   return (await response.json()) as T
 }
 
-function isNetworkError(error: unknown) {
+export function isNetworkError(error: unknown) {
   if (error instanceof TypeError) {
     return true
   }

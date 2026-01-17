@@ -16,6 +16,35 @@ export type Copy = {
   actionNew: string
   actionEdit: string
   actionDelete: string
+  modalClose: string
+  formNewClientTitle: string
+  formEditClientTitle: string
+  formName: string
+  formGender: string
+  formGenderMale: string
+  formGenderFemale: string
+  formAge: string
+  formIdentification: string
+  formAddress: string
+  formPhone: string
+  formPassword: string
+  formStatus: string
+  formStatusActive: string
+  formStatusInactive: string
+  formSelectPlaceholder: string
+  formSave: string
+  formCancel: string
+  formSubmitError: string
+  formDeleteError: string
+  deleteConfirm: string
+  validationRequired: string
+  validationName: string
+  validationAddress: string
+  validationAge: string
+  validationId: string
+  validationPhone: string
+  validationPassword: string
+  validationGeneric: string
   statusActive: string
   statusInactive: string
   loadingClients: string
@@ -73,6 +102,35 @@ const translations: Record<Locale, Copy> = {
     actionNew: 'Nuevo',
     actionEdit: 'Editar',
     actionDelete: 'Eliminar',
+    modalClose: 'Cerrar',
+    formNewClientTitle: 'Nuevo cliente',
+    formEditClientTitle: 'Editar cliente',
+    formName: 'Nombre',
+    formGender: 'Género',
+    formGenderMale: 'Masculino',
+    formGenderFemale: 'Femenino',
+    formAge: 'Edad',
+    formIdentification: 'Identificación',
+    formAddress: 'Dirección',
+    formPhone: 'Teléfono',
+    formPassword: 'Contraseña',
+    formStatus: 'Estado',
+    formStatusActive: 'Activo',
+    formStatusInactive: 'Inactivo',
+    formSelectPlaceholder: 'Seleccionar',
+    formSave: 'Guardar',
+    formCancel: 'Cancelar',
+    formSubmitError: 'No se pudo guardar el cliente.',
+    formDeleteError: 'No se pudo eliminar el cliente.',
+    deleteConfirm: '¿Eliminar este cliente?',
+    validationRequired: 'Este campo es obligatorio.',
+    validationName: 'Solo letras y espacios.',
+    validationAddress: 'Solo letras, números y espacios.',
+    validationAge: 'Debe ser un número entre 1 y 120.',
+    validationId: 'Debe tener 10 dígitos numéricos.',
+    validationPhone: 'Debe tener entre 9 y 10 dígitos.',
+    validationPassword: 'Debe tener entre 4 y 10 dígitos.',
+    validationGeneric: 'Revisa los campos marcados.',
     statusActive: 'Activo',
     statusInactive: 'Inactivo',
     loadingClients: 'Cargando clientes...',
@@ -95,12 +153,12 @@ const translations: Record<Locale, Copy> = {
     reportsEndDate: 'Fecha fin',
     reportFiltersLabel: 'Filtros de reportes',
     columnName: 'Nombre',
-    columnIdentification: 'IdentificaciÃ³n',
-    columnPhone: 'TelÃ©fono',
-    columnAddress: 'DirecciÃ³n',
+    columnIdentification: 'Identificación',
+    columnPhone: 'Teléfono',
+    columnAddress: 'Dirección',
     columnStatus: 'Estado',
     columnActions: 'Acciones',
-    columnAccountNumber: 'NÃºmero cuenta',
+    columnAccountNumber: 'Número cuenta',
     columnAccountType: 'Tipo cuenta',
     columnInitialBalance: 'Saldo inicial',
     columnClient: 'Cliente',
@@ -128,6 +186,35 @@ const translations: Record<Locale, Copy> = {
     actionNew: 'New',
     actionEdit: 'Edit',
     actionDelete: 'Delete',
+    modalClose: 'Close',
+    formNewClientTitle: 'New client',
+    formEditClientTitle: 'Edit client',
+    formName: 'Name',
+    formGender: 'Gender',
+    formGenderMale: 'Male',
+    formGenderFemale: 'Female',
+    formAge: 'Age',
+    formIdentification: 'Identification',
+    formAddress: 'Address',
+    formPhone: 'Phone',
+    formPassword: 'Password',
+    formStatus: 'Status',
+    formStatusActive: 'Active',
+    formStatusInactive: 'Inactive',
+    formSelectPlaceholder: 'Select',
+    formSave: 'Save',
+    formCancel: 'Cancel',
+    formSubmitError: 'Unable to save the client.',
+    formDeleteError: 'Unable to delete the client.',
+    deleteConfirm: 'Delete this client?',
+    validationRequired: 'This field is required.',
+    validationName: 'Only letters and spaces are allowed.',
+    validationAddress: 'Only letters, numbers, and spaces are allowed.',
+    validationAge: 'Must be a number between 1 and 120.',
+    validationId: 'Must be 10 digits.',
+    validationPhone: 'Must be 9 to 10 digits.',
+    validationPassword: 'Must be 4 to 10 digits.',
+    validationGeneric: 'Review the highlighted fields.',
     statusActive: 'Active',
     statusInactive: 'Inactive',
     loadingClients: 'Loading clients...',
